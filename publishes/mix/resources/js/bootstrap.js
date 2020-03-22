@@ -13,7 +13,8 @@ import {
     DropZone,
     InstantSearch,
     TagList,
-    DateTimePicker
+    DateTimePicker,
+    HasManyForm
 } from './components';
 import {MkDir, Move, Rename} from './components/popups';
 import {ModalHeader, ModalFooter} from './components/partials';
@@ -47,6 +48,7 @@ Vue.component('DropZone', DropZone);
 Vue.component('InstantSearch', InstantSearch);
 Vue.component('TagList', TagList);
 Vue.component('DateTimePicker', DateTimePicker);
+Vue.component('HasManyForm', HasManyForm);
 
 // Popups
 Vue.component('MakeDirPopup', MkDir);

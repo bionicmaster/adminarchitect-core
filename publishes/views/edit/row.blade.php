@@ -15,7 +15,7 @@
     </tr>
 @else
     @component('administrator::components.table.row', [
-        'section' => $field instanceof \Terranet\Administrator\Field\HasOne || $field instanceof \Terranet\Administrator\Field\BelongsToMany
+        'section' => $field instanceof \Terranet\Administrator\Field\HasOne || $field instanceof \Terranet\Administrator\Field\BelongsToMany || $field instanceof \Terranet\Administrator\Field\HasMany
     ])
         @slot('label', Form::label($field->id(), $field->title()))
         @slot('description', $field->getDescription())

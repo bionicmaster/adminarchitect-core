@@ -53,6 +53,8 @@ abstract class Field implements Sortable, AutoTranslatable
         'class' => 'form-control',
     ];
 
+    protected $hiddenField = false;
+
     /**
      * Field constructor.
      *
@@ -457,6 +459,30 @@ abstract class Field implements Sortable, AutoTranslatable
 
         return $this;
     }
+
+    /**
+     * Return hiddenField
+     *
+     * @return bool
+     */
+    public function hiddenField(): bool
+    {
+        return $this->hiddenField;
+    }
+    
+
+    /**
+     * Set to include hidden field
+     *
+     * @return self
+     */
+    public function setIncludeHidden(bool $includeHidden): self
+    {
+        $this->hiddenField = $includeHidden;
+
+        return $this;
+    }
+    
 
     /**
      * @param  mixed  $pages
