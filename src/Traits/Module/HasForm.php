@@ -9,6 +9,17 @@ use Terranet\Translatable\Translatable;
 trait HasForm
 {
     /**
+     * Custom change fillable()
+     *
+     * @return void
+     */
+    public function scaffoldFillable()
+    {
+        $eloquent = $this->model();
+        return $eloquent->getFillable();
+    }
+    
+    /**
      * Provides array of editable columns.
      *
      * @return Mutable
@@ -31,7 +42,8 @@ trait HasForm
             $editable = $editable
                 ->merge([$eloquent->getKeyName()])
                 ->merge($translatable = $this->scaffoldTranslatable($eloquent))
-                ->merge($eloquent->getFillable());
+                //->merge($eloquent->getFillable());
+                ->merge($this->scaffoldFillable());
 
             return $editable->build(
                 new Grid($eloquent)
