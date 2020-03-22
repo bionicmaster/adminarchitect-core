@@ -50,6 +50,20 @@ class HasMany extends Field
         return $this;
     }
 
+    public function checkBoxes(): self
+    {
+        $this->editMode = static::MODE_CHECKBOXES;
+        return $this;
+    }
+
+    public function multiSelect(): self
+    {
+        $this->editMode = static::MODE_MULTI_SELECT;
+        return $this;
+    }
+    
+    
+
     public function useAsTitle(string $column): self
     {
         $this->titleField = $column;
