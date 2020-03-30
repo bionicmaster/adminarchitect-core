@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Illuminate\Validation\ValidationException;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Symfony\Component\HttpFoundation\Response;
 use Terranet\Administrator\AdminRequest;
@@ -100,6 +101,8 @@ class ScaffoldController extends AdminController
 
         try {
             $resource->actions()->exec('save', [$eloquent, $request]);
+        } catch(ValidationException $e) {
+            return back()->withErrors([$e->errors()]);
         } catch (\Exception $e) {
             return back()->withErrors([$e->getMessage()]);
         }
@@ -147,6 +150,8 @@ class ScaffoldController extends AdminController
 
         try {
             $eloquent = $resource->actions()->exec('save', [$eloquent, $request]);
+        } catch(ValidationException $e) {
+            return back()->withErrors([$e->errors()]);
         } catch (\Exception $e) {
             return back()->withErrors([$e->getMessage()]);
         }
@@ -171,6 +176,8 @@ class ScaffoldController extends AdminController
 
         try {
             $module->actions()->exec('delete', [$eloquent]);
+        } catch(ValidationException $e) {
+            return back()->withErrors([$e->errors()]);
         } catch (\Exception $e) {
             return back()->withErrors([$e->getMessage()]);
         }
@@ -198,6 +205,8 @@ class ScaffoldController extends AdminController
 
         try {
             $resource->actions()->exec('detachFile', [$eloquent, $attachment]);
+        } catch(ValidationException $e) {
+            return back()->withErrors([$e->errors()]);
         } catch (\Exception $e) {
             return back()->withErrors([$e->getMessage()]);
         }
