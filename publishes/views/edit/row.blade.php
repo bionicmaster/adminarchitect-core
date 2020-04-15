@@ -13,6 +13,9 @@
     <tr>
         <th class="btn-quirk" colspan="2">{{ $field->title() }}</th>
     </tr>
+@elseif ($field instanceof \Terranet\Administrator\Field\SectionView)
+    <!-- if no row added, it will be display on top of table -->
+    {{ $field->render()  }}
 @else
     @component('administrator::components.table.row', [
         'section' => $field instanceof \Terranet\Administrator\Field\HasOne || $field instanceof \Terranet\Administrator\Field\BelongsToMany || $field instanceof \Terranet\Administrator\Field\HasMany

@@ -28,6 +28,9 @@ $elements = $resource->viewColumns()->each->setModel($item);
                 @slot('title', $element->title())
             @endcomponent
             {!! $element->render(\Terranet\Administrator\Scaffolding::PAGE_VIEW) !!}
+        @elseif ($element instanceof \Terranet\Administrator\Field\SectionView)
+            <!-- if no row added, it will be display on top of table -->
+            {{ $field->render()  }}
         @else
             @component('administrator::components.table.row')
                 @slot('label', Form::label($element->id(), $element->title()))
