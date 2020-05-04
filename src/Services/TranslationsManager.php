@@ -6,7 +6,7 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Terranet\Administrator\Services\Translations\Reader;
-use Zend\Code\Generator\ValueGenerator;
+use Laminas\Code\Generator\ValueGenerator;
 
 class TranslationsManager
 {
