@@ -108,7 +108,7 @@ class ContainersServiceProvider extends ServiceProvider
     {
         $this->app->singleton('scaffold.module', function (Application $app) {
             /** @var Router $router */
-            $router = $app['router']->current();
+            $router = $app['request']->router();
 
             if (in_array($router->getName(), ['scaffold.settings.edit', 'scaffold.settings.update'], true)) {
                 return Architect::resourceForKey('settings');
