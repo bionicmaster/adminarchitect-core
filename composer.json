@@ -1,5 +1,5 @@
 {
-    "name": "adminarchitect/core",
+    "name": "bionicmaster/adminarchitect-core",
     "description": "Active Admin for Laravel.",
     "authors": [
         {
@@ -13,7 +13,7 @@
         "ext-json": "*",
         "ext-dom": "*",
         "laravelcollective/html": "5.*|dev-master",
-        "doctrine/dbal": "2.9.*",
+        "doctrine/dbal": "^2.9.1",
         "doctrine/annotations": "^1.6",
         "terranet/menus": "^2.2",
         "terranet/presentable": "^1.0",

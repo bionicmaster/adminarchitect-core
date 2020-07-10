@@ -1,7 +1,7 @@
 <!-- Validation errors -->
 @if (isset($errors) && $errors->count())
     <div class="alert alert-danger alert-dismissible" role="alert">
-        {{ $errors->first() }}
+        {{ $errors->__toString() }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>

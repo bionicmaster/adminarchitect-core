@@ -23,6 +23,7 @@ use Terranet\Administrator\Field\File;
 use Terranet\Administrator\Field\Image;
 use Terranet\Administrator\Field\Text;
 use Terranet\Translatable\Translatable;
+use Terranet\Administrator\Field\Detectors\ViewDetector;
 
 class Grid
 {
@@ -115,6 +116,10 @@ class Grid
             new LinkDetector(),
             new PhoneDetector(),
             new NumberDetector(),
+            // must place before TextDetector, because TextDetector is the default
+            // this is just use for HasOne, BelongsTo etc detection
+            // haven't test to completion, and is based on column string start with <, end with >
+            new ViewDetector(),
             new TextDetector(),
         ])($column, $this->fetchTablesColumns()[$column], $this->model);
     }

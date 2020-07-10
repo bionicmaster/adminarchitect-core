@@ -26,7 +26,11 @@ class DateTime extends Field
             Time::class => $this->timeFormat,
         ][\get_class($this)];
 
-        $formattedValue = Carbon::parse($this->value())->format($format);
+        if(empty($this->value())) {
+            $formattedValue = '';
+        } else {
+            $formattedValue = Carbon::parse($this->value())->format($format);
+        }
 
         return [
             'formatted' => $formattedValue,

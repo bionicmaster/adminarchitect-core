@@ -2,8 +2,8 @@
 
 @if($form->hasEditors('markdown'))
     @if (file_exists(public_path('admin/editors/markdown.js')))
-        <link rel="stylesheet" href="{{ mix('editors/markdown.css', 'admin') }}">
-        <script src="{{ mix('editors/markdown.js', 'admin') }}"></script>
+        <link rel="stylesheet" href="{{ mix('editors/markdown.css', 'adminarchitect_assetpath') }}">
+        <script src="{{ mix('editors/markdown.js', 'adminarchitect_assetpath') }}"></script>
     @else
         /**
         * It is not working as well using npm version, so temporary decided to use cdn version.
@@ -23,14 +23,14 @@
 @endif
 
 @if($form->hasEditors('medium'))
-    <link rel="stylesheet" href="{{ mix('editors/medium.css', 'admin') }}">
-    <script src="{{ mix('editors/medium.js', 'admin') }}"></script>
+    <link rel="stylesheet" href="{{ mix('editors/medium.css', 'adminarchitect_assetpath') }}">
+    <script src="{{ mix('editors/medium.js', 'adminarchitect_assetpath') }}"></script>
 @endif
 
 @if($form->hasEditors('ckeditor'))
-    <script src="{{ mix('editors/ckeditor.js', 'admin') }}"></script>
+    <script src="{{ mix('editors/ckeditor.js', 'adminarchitect_assetpath') }}"></script>
 @endif
 
 @if ($form->hasEditors('tinymce'))
-    <script src="{{ mix('editors/tinymce.js', 'admin') }}"></script>
+    <script src="{{ mix('editors/tinymce.js', 'adminarchitect_assetpath') }}"></script>
 @endif

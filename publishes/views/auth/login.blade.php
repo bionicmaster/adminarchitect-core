@@ -53,7 +53,7 @@
             {!! Form::close() !!}
         </div>
     </div>
-    <script src="{{ mix('manifest.js', 'admin') }}"></script>
-    <script src="{{ mix('vendor.js', 'admin') }}"></script>
+    <script src="{{ mix('manifest.js', 'adminarchitect_assetpath') }}"></script>
+    <script src="{{ mix('vendor.js', 'adminarchitect_assetpath') }}"></script>
 </body>
 </html>

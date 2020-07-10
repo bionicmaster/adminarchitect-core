@@ -39,7 +39,8 @@ class Boolean extends Field
      */
     public function isTrue()
     {
-        return $this->value() === $this->trueValue;
+        // originally do strict compare ===, but I remove since laravel create boolean as tinyint
+        return $this->value() == $this->trueValue;
     }
 
     /**
